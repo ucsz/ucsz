@@ -1,4 +1,4 @@
-### Hi there 👋
+### &#262F;
 
 <!--
 **ucsz/ucsz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,3 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+<br/>
+<br/>
+&copy; UCSZ 2023  &sect;
