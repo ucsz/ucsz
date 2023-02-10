@@ -43,11 +43,16 @@ jobs:
           MASTER_MAIL_SMTP_163QY_PASSWORD: ${{ secrets.MASTER_MAIL_SMTP_163QY_PASSWORD }}
           TZ: Asia/Shanghai
         run: |
+          pwd
+          cd ${{ secrets.REPOSITORY_NAME }}
           python visualcrossing.py
       - name: Execute Submit
         env:
           TZ: Asia/Shanghai
         run: |
+          pwd
+          cd ${{ secrets.REPOSITORY_NAME }}
+          pwd
           git status
           git add ./*
           git commit -m 'Actions to Execute Script'
