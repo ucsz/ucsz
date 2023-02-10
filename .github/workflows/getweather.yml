@@ -48,9 +48,18 @@ jobs:
         env:
           TZ: Asia/Shanghai
         run: |
-          # echo $(date +'%F %T %z') >> ./templog.text
           git status
           git add ./*
           git commit -m 'Actions to Execute Script'
           git push origin master
-          ls -Ali
+
+      - name: Modify FileName
+        env:
+          TZ: Asia/Shanghai
+        run: |
+          pwd
+          cd ${{ secrets.REPOSITORY_NAME }}
+          pwd
+          chmod -R 755 .git
+          python upsetimg.py
+          du -sh ./*
