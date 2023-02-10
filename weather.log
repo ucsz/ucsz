@@ -1,13 +1,6 @@
 =================================
 120.206 30.2724 Hangzhou, China
 =================================
-7.5℃  <   2023-02-10   <  10.0℃
-日出06:44:11          17:43:03日落
-相对湿度                     81.5%
-有雨 -> rain
-Rain, Partially cloudy
-Partly cloudy throughout the day with rain in the morning and afternoon.
----------------------------------
 7.4℃  <   2023-02-11   <  10.5℃
 日出06:43:23          17:43:52日落
 相对湿度                     89.4%
@@ -75,29 +68,29 @@ Partly cloudy throughout the day.
 日出06:35:22          17:51:01日落
 相对湿度                     75.7%
 有雨 -> rain
-Partially cloudy
-Partly cloudy throughout the day.
+Rain, Partially cloudy
+Partly cloudy throughout the day with rain clearing later.
 ---------------------------------
 2.8℃  <   2023-02-21   <  9.7℃
 日出06:34:24          17:51:47日落
 相对湿度                     70.8%
-无雨
-Clear
-Clear conditions throughout the day.
+有雨 -> rain
+Rain
+Clear conditions throughout the day with a chance of rain.
 ---------------------------------
 5.7℃  <   2023-02-22   <  16.2℃
 日出06:33:24          17:52:32日落
 相对湿度                     66.7%
-有雨 -> rain
-Rain, Partially cloudy
-Partly cloudy throughout the day with a chance of rain.
+无雨
+Partially cloudy
+Partly cloudy throughout the day.
 ---------------------------------
 6.8℃  <   2023-02-23   <  12.6℃
 日出06:32:24          17:53:17日落
 相对湿度                     66.3%
 有雨 -> rain
-Overcast
-Cloudy skies throughout the day.
+Rain, Overcast
+Cloudy skies throughout the day with a chance of rain.
 ---------------------------------
 4.5℃  <   2023-02-24   <  10.2℃
 日出06:31:22          17:54:02日落
@@ -105,4 +98,11 @@ Cloudy skies throughout the day.
 无雨
 Partially cloudy
 Partly cloudy throughout the day.
+---------------------------------
+4.6℃  <   2023-02-25   <  10.9℃
+日出06:30:20          17:54:46日落
+相对湿度                     53.9%
+无雨
+Overcast
+Cloudy skies throughout the day.
 ---------------------------------
