@@ -53,13 +53,13 @@ jobs:
           git commit -m 'Actions to Execute Script'
           git push origin master
 
-      - name: Modify FileName
-        env:
-          TZ: Asia/Shanghai
-        run: |
-          pwd
-          cd ${{ secrets.REPOSITORY_NAME }}
-          pwd
-          chmod -R 755 .git
-          python upsetimg.py
-          du -sh ./*
+#      - name: Modify FileName
+#        env:
+#          TZ: Asia/Shanghai
+#        run: |
+#          pwd
+#          cd ${{ secrets.REPOSITORY_NAME }}
+#          pwd
+#          chmod -R 755 .git
+#          python upsetimg.py
+#          du -sh ./*
