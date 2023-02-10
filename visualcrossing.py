@@ -16,8 +16,7 @@ import ProcessingDataUnit
 
 try:
     ResultBytes = urllib.request.urlopen(
-        # "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=7RCAP4E9Y7DKUTZALLAS8BJBG&contentType=json"
-        "http://8.136.142.19:1443/json.log")
+        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=7RCAP4E9Y7DKUTZALLAS8BJBG&contentType=json")
     #  Parse the results as JSON
     jsonData = json.load(ResultBytes)
     maillog = ProcessingDataUnit.JsonToString(jsonData)
