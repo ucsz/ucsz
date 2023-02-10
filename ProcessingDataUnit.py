@@ -70,12 +70,12 @@ def JsonToString(jsonValues):
 
 #  内容写入文件,传入需要写入文件名,需要写入的内容
 def file_in(file_name,number_data):
-    with open('./'+file_name+'.text', 'w', encoding='utf-8') as f:
+    with open('./'+file_name+'.log', 'w', encoding='utf-8') as f:
         f.write(str(number_data))
         f.close()
 
 #  内容写入文件末尾,传入需要写入文件名,需要追加写入的内容
 def file_add_content(file_name,number_data):
-    with open('./'+file_name+'.text', 'a', encoding='utf-8') as f:
+    with open('./'+file_name+'.log', 'a', encoding='utf-8') as f:
         f.write('\n' + str(number_data))
         f.close()
