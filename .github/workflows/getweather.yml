@@ -54,7 +54,7 @@ jobs:
           cd ${{ secrets.REPOSITORY_NAME }}
           pwd
           git status
-          git add ./*
+          git add ./weather.log
           git commit -m 'Actions to Execute Script'
           git push origin master
 
