@@ -22,7 +22,6 @@ try:
     jsonData = json.load(ResultBytes)
     maillog = ProcessingDataUnit.JsonToString(jsonData)
     print(maillog)
-
     to_addr = os.environ["MASTER_MAIL_SMTP_TOADDRESS"]  # 接收邮箱
     mail_arg = os.environ["MASTER_MAIL_SMTP_163QY_SSL"]  # 发送协议地址
     # mail_port = os.environ["MASTER_MAIL_SMTP_SSL_PORT"]  # 发送协议端口
@@ -30,6 +29,7 @@ try:
     mail_password = os.environ["MASTER_MAIL_SMTP_163QY_PASSWORD"]  # 发送邮件账号密码
     strSub = '今日出行天气汇总' + time.strftime("%Y%m%d%H%M%S%p")  # 邮件标题
     SendMail.sendMail(mail_account, mail_password, mail_arg, to_addr, strSub, str(jsonData))
+    ProcessingDataUnit.file_in("weather", jsonData)
 except urllib.error.HTTPError as e:
     ErrorInfo = e.read().decode()
     print('Error code: ', e.code, ErrorInfo)
