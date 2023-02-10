@@ -15,8 +15,9 @@ import SendMail
 import ProcessingDataUnit
 
 try:
+    key_value = os.environ["VISUALCROSSING_KEY"]  # visualcrossing key
     ResultBytes = urllib.request.urlopen(
-        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=7RCAP4E9Y7DKUTZALLAS8BJBG&contentType=json")
+        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
     #  Parse the results as JSON
     jsonData = json.load(ResultBytes)
     maillog = ProcessingDataUnit.JsonToString(jsonData)
