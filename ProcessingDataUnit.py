@@ -7,6 +7,9 @@
 # Copyright (W) 2022 U.C.S.Z. Corp.
 # License: ucsz.com
 
+import urllib.request
+import json
+
 # 处理数据格式
 
 # 获取的天气json串转换为string格式
