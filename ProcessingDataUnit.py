@@ -53,8 +53,10 @@ def weatherJsonToString(jsonValues):
         #  strDaySevererisk = str(i['severerisk']) if 'severerisk' in i else '0.0'  # 风险
         strDaySunrise = str(i['sunrise']) if 'sunrise' in i else '06:00:00'  # 日出时间
         strDaySunset = str(i['sunset']) if 'sunset' in i else '18:00:00'  # 日落时间
-        strDayConditions = str(i['conditions']) if 'conditions' in i else '0.0'  # 当天天气条件
-        strDayDescription = str(i['description']) if 'description' in i else '0.0'  # 天气描述
+        strDayConditionsTemp = str(i['conditions']) if 'conditions' in i else '0.0'  # 当天天气条件
+        strDayConditions = getTranslationJsonToString(strDayConditionsTemp)  # 描述换成中文
+        strDayDescriptionTemp = str(i['description']) if 'description' in i else '0.0'  # 天气描述
+        strDayDescription = getTranslationJsonToString(strDayDescriptionTemp)  # 描述换成中文
         #  strDay = str(i['']) if '' in i else '0.0'  #
         #  isRain = str(strDayPreciptypeValue) if strDayPreciptypeValue is not None else "无雨"
         isRain = None
