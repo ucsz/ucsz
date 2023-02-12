@@ -112,13 +112,14 @@ def translationJsonToString(enJsonString):
 # 传入英文文本并调用的翻译接口返回json串，截取串中的中文翻译结果字串
 def getTranslationJsonToString(enString):
     translateResult = None
+    inString = spaceCharacterConvertString(enString)
     resultJson = urllib.request.urlopen(
         # "http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=en&tl=zh-CN&q=" + enString
-        "https://fanyi.youdao.com/translate?&doctype=json&type=EN2ZH_CN&i=" + enString)
+        "https://fanyi.youdao.com/translate?&doctype=json&type=EN2ZH_CN&i=" + inString)
     #  Parse the results as JSON
     jsonData = json.load(resultJson)
     strErrorCode = int(jsonData['errorCode']) if 'errorCode' in jsonData else -1  # 接口返回状态
-    print("strErrorCode:" + str(strErrorCode))
+    # print("strErrorCode:" + str(strErrorCode))
     if strErrorCode == 0:
         translateDate = list(jsonData['translateResult']) if 'translateResult' in jsonData else '[]'
         if len(translateDate) > 0:
