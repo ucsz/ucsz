@@ -45,10 +45,10 @@ jobs:
           TZ: Asia/Shanghai
         run: |
           pwd
-          who
-          ls -Ali
           cd ${{ secrets.REPOSITORY_NAME }}
+          pwd
           python visualcrossing.py
+          ls -Ali ./weather.log
       - name: Execute Submit
         env:
           TZ: Asia/Shanghai
