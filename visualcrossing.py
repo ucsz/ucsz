@@ -21,7 +21,7 @@ try:
     #  Parse the results as JSON
     jsonData = json.load(ResultBytes)
     maillog = ProcessingDataUnit.weatherJsonToString(jsonData)
-    print(maillog)
+    # print(maillog)
     to_addr = os.environ["MASTER_MAIL_SMTP_TOADDRESS"]  # 接收邮箱
     mail_arg = os.environ["MASTER_MAIL_SMTP_163QY_SSL"]  # 发送协议地址
     # mail_port = os.environ["MASTER_MAIL_SMTP_SSL_PORT"]  # 发送协议端口
