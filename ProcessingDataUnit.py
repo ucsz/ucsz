@@ -24,7 +24,8 @@ def weatherJsonToString(jsonValues):
     strInitHeader = strLongitude + ' ' + strLatitude + ' ' + strResolvedAddress
     strLogInit = "=================================\n" + strInitHeader + "\n================================="
     jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
-    strLogAllDayDate = strLogInit
+    print(strLogInit)
+    strLogAllDayDate = None
     for i in jsonDat:
         strDayDatetime = str(i['datetime']) if 'datetime' in i else '2023-01-01'  # 当前日期
         strDayTempMax = str(i['tempmax']) if 'tempmax' in i else '0.0'  # 区域内最高温度
