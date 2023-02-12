@@ -28,7 +28,7 @@ try:
     mail_account = os.environ["MASTER_MAIL_SMTP_FROMADDRESS"]  # 发送邮件账号
     mail_password = os.environ["MASTER_MAIL_SMTP_163QY_PASSWORD"]  # 发送邮件账号密码
     strSub = '今日出行天气汇总' + time.strftime("%Y%m%d%H%M%S%p")  # 邮件标题
-    # SendMail.sendMail(mail_account, mail_password, mail_arg, to_addr, strSub, str(maillog))
+    SendMail.sendMail(mail_account, mail_password, mail_arg, to_addr, strSub, str(maillog))
     ProcessingDataUnit.file_in("weather", maillog)
 except urllib.error.HTTPError as e:
     ErrorInfo = e.read().decode()
