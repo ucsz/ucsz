@@ -24,9 +24,10 @@ def weatherJsonToString(jsonValues):
     #  str = str(jsonValues['']) if '' in jsonValues else 0  #
     strInitHeader = strLongitude + ' ' + strLatitude + ' ' + strResolvedAddress
     strLogInit = "=================================\n" + strInitHeader + "\n================================="
-    jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
+    strLoverPrattle = loverPrattle()
     print(strLogInit)
-    strLogAllDayDate = ""
+    strLogAllDayDate = "" + str(strLoverPrattle)
+    jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
     for i in jsonDat:
         strDayDatetime = str(i['datetime']) if 'datetime' in i else '2023-01-01'  # 当前日期
         strDayTempMax = str(i['tempmax']) if 'tempmax' in i else '0.0'  # 区域内最高温度
@@ -66,7 +67,7 @@ def weatherJsonToString(jsonValues):
             isRain = "有雨 -> " + str(strDayPreciptypeValue)
         else:
             isRain = "无雨"
-        strLogDay = strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
+        strLogDay = "\n" + strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
                     + "\n日出" + strDaySunrise + "          " + strDaySunset + "日落" \
                     + "\n相对湿度" + "                     " + strDayHumidity + "%" \
                     + "\n" + isRain \
