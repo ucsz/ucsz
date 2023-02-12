@@ -138,3 +138,27 @@ def getTranslationJsonToString(enString):
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return translateResult
+
+# 土味情话 (接口https://api.lovelive.tools/api/SweetNothings/1/Serialization/json)
+def loverPrattle():
+    loverResult = "叙述与事实脱节，是生活的常态。"
+    try:
+        resultJson = urllib.request.urlopen("https://api.lovelive.tools/api/SweetNothings/1/Serialization/json")
+        #  Parse the results as JSON
+        jsonData = json.load(resultJson)
+        strCode = int(jsonData['code']) if 'code' in jsonData else 400  # 接口返回状态
+        # print("strErrorCode:" + str(strErrorCode))
+        if strCode == 200:
+            loverDate = list(jsonData['returnObj']) if 'returnObj' in jsonData else '["听故事，故事就是故事，过瘾就好了。"]'
+            if len(loverDate) > 0:
+                returnObj = str(loverDate[0])
+                loverResult = returnObj
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return loverResult
