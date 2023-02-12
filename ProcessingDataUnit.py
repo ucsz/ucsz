@@ -73,7 +73,7 @@ def weatherJsonToString(jsonValues):
                     + "\n" + isRain \
                     + "\n" + strDayConditions \
                     + "\n" + strDayDescription \
-                    + "\n---------------------------------\n"
+                    + "\n---------------------------------"
         strLogAllDayDate = strLogAllDayDate + strLogDay
     return strLogAllDayDate
 
