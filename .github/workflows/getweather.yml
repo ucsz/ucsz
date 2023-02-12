@@ -45,6 +45,8 @@ jobs:
           TZ: Asia/Shanghai
         run: |
           pwd
+          who
+          ls -Ali
           cd ${{ secrets.REPOSITORY_NAME }}
           python visualcrossing.py
       - name: Execute Submit
