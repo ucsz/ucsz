@@ -9,7 +9,8 @@
 
 # 处理数据格式
 
-def JsonToString(jsonValues):
+# 获取的天气json串转换为string格式
+def weatherJsonToString(jsonValues):
     strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
     #  strAddress = str(jsonValues['address']) if 'address' in jsonValues else 0  # 位置
     strLongitude = str(jsonValues['longitude']) if 'longitude' in jsonValues else 0  # 经度
