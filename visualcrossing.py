@@ -20,7 +20,7 @@ try:
         "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
     #  Parse the results as JSON
     jsonData = json.load(ResultBytes)
-    maillog = ProcessingDataUnit.JsonToString(jsonData)
+    maillog = ProcessingDataUnit.weatherJsonToString(jsonData)
     print(maillog)
     to_addr = os.environ["MASTER_MAIL_SMTP_TOADDRESS"]  # 接收邮箱
     mail_arg = os.environ["MASTER_MAIL_SMTP_163QY_SSL"]  # 发送协议地址
