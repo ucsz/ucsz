@@ -9,6 +9,7 @@
 
 import urllib.request
 import json
+import sys
 
 # 处理数据格式
 
@@ -114,16 +115,25 @@ def translationJsonToString(enJsonString):
 def getTranslationJsonToString(enString):
     translateResult = None
     inString = spaceCharacterConvertString(enString)
-    resultJson = urllib.request.urlopen(
-        # "http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=en&tl=zh-CN&q=" + enString
-        "https://fanyi.youdao.com/translate?&doctype=json&type=EN2ZH_CN&i=" + inString)
-    #  Parse the results as JSON
-    jsonData = json.load(resultJson)
-    strErrorCode = int(jsonData['errorCode']) if 'errorCode' in jsonData else -1  # 接口返回状态
-    # print("strErrorCode:" + str(strErrorCode))
-    if strErrorCode == 0:
-        translateDate = list(jsonData['translateResult']) if 'translateResult' in jsonData else '[]'
-        if len(translateDate) > 0:
-            tgt = str(translateDate[0][0]['tgt'])
-            translateResult = tgt
+    try:
+        resultJson = urllib.request.urlopen(
+            # "http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=en&tl=zh-CN&q=" + enString
+            "https://fanyi.youdao.com/translate?&doctype=json&type=EN2ZH_CN&i=" + inString)
+        #  Parse the results as JSON
+        jsonData = json.load(resultJson)
+        strErrorCode = int(jsonData['errorCode']) if 'errorCode' in jsonData else -1  # 接口返回状态
+        # print("strErrorCode:" + str(strErrorCode))
+        if strErrorCode == 0:
+            translateDate = list(jsonData['translateResult']) if 'translateResult' in jsonData else '[]'
+            if len(translateDate) > 0:
+                tgt = str(translateDate[0][0]['tgt'])
+                translateResult = tgt
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
     return translateResult
