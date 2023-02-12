@@ -80,3 +80,26 @@ def file_add_content(file_name,number_data):
     with open('./'+file_name+'.log', 'a', encoding='utf-8') as f:
         f.write('\n' + str(number_data))
         f.close()
+
+# 传入含空格的字符串，并将字符串中的空格替换成'%20'
+def spaceCharacterConvertString(conString):
+    replaceString = " "
+    replace_dict = {k: "%20" for k in replaceString}
+    dataResult = str(conString)
+    for k, v in replace_dict.items():
+        dataResult = dataResult.replace(k, v)
+    # print("dataResult:" + dataResult)
+    return dataResult
+
+# 获取的翻译接口返回的json串，截取串中的中文翻译结果字串
+def translationJsonToString(enJsonString):
+    translateResult = None
+    #  Parse the results as JSON
+    strErrorCode = int(enJsonString['errorCode']) if 'errorCode' in enJsonString else -1  # 接口返回状态
+    print("strErrorCode:" + str(strErrorCode))
+    if strErrorCode == 0:
+        translateDate = list(enJsonString['translateResult']) if 'translateResult' in enJsonString else '[]'
+        if len(translateDate) > 0:
+            tgt = str(translateDate[0][0]['tgt'])
+            translateResult = tgt
+    return translateResult
