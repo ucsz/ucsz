@@ -25,7 +25,7 @@ def weatherJsonToString(jsonValues):
     strInitHeader = strLongitude + ' ' + strLatitude + ' ' + strResolvedAddress
     strLogInit = "=================================\n" + strInitHeader + "\n================================="
     strLoverPrattle = loverPrattle()
-    print(strLogInit)
+    # print(strLogInit)
     strLogAllDayDate = "" + str(strLoverPrattle) + "\n================================="
     jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
     for i in jsonDat:
