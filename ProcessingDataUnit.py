@@ -78,7 +78,7 @@ def weatherJsonToString(jsonValues):
 
 #  内容写入文件,传入需要写入文件名,需要写入的内容
 def file_in(file_name,number_data):
-    print(fila_name + "文件准备写入：" + number_date)
+    print(file_name + "文件准备写入：" + number_date)
     with open('./'+file_name+'.log', 'w', encoding='utf-8') as f:
         f.write(str(number_data))
         f.close()
