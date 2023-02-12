@@ -105,7 +105,7 @@ def translationJsonToString(enJsonString):
     return translateResult
 
 # 传入英文文本并调用的翻译接口返回json串，截取串中的中文翻译结果字串
-def translationJsonToString(enString):
+def getTranslationJsonToString(enString):
     translateResult = None
     resultJson = urllib.request.urlopen(
         # "http://translate.google.cn/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=en&tl=zh-CN&q=" + enString
