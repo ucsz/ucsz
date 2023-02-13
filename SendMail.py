@@ -31,7 +31,7 @@ def sendMail(fromMail, mailPassword, mailSMTP, toMail, subject, matter):
     msg['Subject'] = Header(subject, 'utf-8').encode()
     try:
         server = smtplib.SMTP_SSL(mailSMTP, 994)
-        server.set_debuglevel(1)
+        # server.set_debuglevel(1)  # 设置debug等级，用于调试（不设置不影响发邮件），设置了之后会输出通讯内容
         server.login(fromMail, mailPassword)
         server.sendmail(fromMail, [toMail], msg.as_string())
         server.quit()
