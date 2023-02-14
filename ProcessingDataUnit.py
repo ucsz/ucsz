@@ -181,3 +181,21 @@ def pompousWordage():
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return pompousResult
+
+# 毒鸡汤 (接口https://api.shadiao.pro/du)
+def cruelSoup():
+    soupResult = "我是深知欲速则不达，心急吃不了热豆腐的，你怎么能说我有拖延症？"
+    try:
+        resultJson = urllib.request.urlopen("https://api.shadiao.pro/du")
+        jsonResult = json.load(resultJson)
+        strText = jsonResult['data']['text'] if 'data' in jsonResult else '我把玫瑰花藏在身后，花店老板说这有监控。'  #
+        soupResult = str(strText)
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return soupResult
