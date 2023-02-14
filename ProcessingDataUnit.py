@@ -199,3 +199,21 @@ def cruelSoup():
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return soupResult
+
+# 朋友圈文案 (接口https://api.shadiao.pro/pyq)
+def friendCircles():
+    circlesResult = "即将成为全面小康的漏网之鱼。"
+    try:
+        resultJson = urllib.request.urlopen("https://api.shadiao.pro/pyq")
+        jsonResult = json.load(resultJson)
+        strText = jsonResult['data']['text'] if 'data' in jsonResult else '少听那些只比你大一点点的人提出的关键人生建议。'  #
+        circlesResult = str(strText)
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return circlesResult
