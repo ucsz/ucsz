@@ -163,3 +163,21 @@ def loverPrattle():
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return loverResult
+
+# 彩虹屁 (接口https://api.shadiao.pro/chp)
+def pompousWordage():
+    pompousResult = "那年我双手插兜，没见过比我还舔的狗。"
+    try:
+        resultJson = urllib.request.urlopen("https://api.shadiao.pro/chp")
+        jsonResult = json.load(resultJson)
+        strText = jsonResult['data']['text'] if 'data' in jsonResult else '晚是全世界的晚 ，安是指给你的安'  #
+        pompousResult = str(strText)
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return pompousResult
