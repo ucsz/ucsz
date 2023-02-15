@@ -29,10 +29,10 @@ def weatherJsonToString(jsonValues):
     strCruelSoup = cruelSoup()
     strFriendCircles = friendCircles()
     # print(strLogInit)
-    strLogAllDayDate = "" + str(strLoverPrattle) \
-                       + "\n" + strPompousWordage \
-                       + "\n" + strFriendCircles \
-                       + "\n" + strCruelSoup \
+    strLogAllDayDate = "⏰" + str(strLoverPrattle) \
+                       + "\n🍚" + strPompousWordage \
+                       + "\n🍵" + strFriendCircles \
+                       + "\n🍺" + strCruelSoup \
                        + "\n================================="
     jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
     for i in jsonDat:
