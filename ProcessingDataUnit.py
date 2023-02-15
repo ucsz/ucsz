@@ -33,6 +33,8 @@ def weatherJsonToString(jsonValues):
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
                        + "\n🍺" + strCruelSoup \
+                       + "\n⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽" \
+                       + "\n" + strOilPrice \
                        + "\n================================="
     jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
     for i in jsonDat:
