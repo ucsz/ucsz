@@ -42,6 +42,7 @@ jobs:
           MASTER_MAIL_SMTP_SSL_PORT: ${{ secrets.MASTER_MAIL_SMTP_SSL_PORT }}
           MASTER_MAIL_SMTP_163QY_PASSWORD: ${{ secrets.MASTER_MAIL_SMTP_163QY_PASSWORD }}
           VISUALCROSSING_KEY: ${{ secrets.VISUALCROSSING_KEY }}
+          TIANAPI_KEY: ${{ secrets.TIANAPI_KEY }}
           TZ: Asia/Shanghai
         run: |
           pwd
