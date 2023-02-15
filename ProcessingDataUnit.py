@@ -4,7 +4,7 @@
 # @Time     : 2023/2/10 15:06
 # @Author   : Nick Huang (nick.huang@ucsz.com)
 # @File     : ProcessingDataUnit.py
-# Copyright (W) 2022 U.C.S.Z. Corp.
+# Copyright (W) 2023 U.C.S.Z. Corp.
 # License: ucsz.com
 
 import urllib.request
@@ -36,6 +36,7 @@ def weatherJsonToString(jsonValues):
                        + "\n🍵" + strFriendCircles \
                        + "\n🍺" + strCruelSoup \
                        + "\n⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽" \
+                       + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
                        + "\n" + strOilPrice \
                        + "\n================================="
     jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
