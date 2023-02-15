@@ -224,3 +224,30 @@ def friendCircles():
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return circlesResult
+
+# 今日油价 (接口https://apis.tianapi.com/oilprice/index?key=TIANAPI_KEY&prov=%E6%B9%96%E5%8C%97)
+def oilPrice(api_key, provinceName):
+    oilPriceResult = ""
+    url_link = "https://apis.tianapi.com/oilprice/index?key=" + api_key + "&prov=" + provinceName
+    try:
+        resultJson = urllib.request.urlopen(url_link)
+        jsonResult = json.load(resultJson)
+        strCode = int(jsonResult['code']) if 'code' in jsonResult else 400  # 接口返回状态
+        # print("strErrorCode:" + str(strErrorCode))
+        if strCode == 200:
+            provStr = str(jsonResult['result']['prov']) if 'result' in jsonResult else '0.00'
+            p92Str = str(jsonResult['result']['p92']) if 'result' in jsonResult else '0.00'
+            p95Str = str(jsonResult['result']['p95']) if 'result' in jsonResult else '0.00'
+            p98Str = str(jsonResult['result']['p98']) if 'result' in jsonResult else '0.00'
+            ptimeStr = str(jsonResult['result']['time']) if 'result' in jsonResult else '2023-02-15 08:00:00.280'
+            strText = provStr + "     92#      95#     98#" + "\n        " + p92Str + "     " + p95Str + "    " + p98Str
+            oilPriceResult = str(strText)
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return oilPriceResult
