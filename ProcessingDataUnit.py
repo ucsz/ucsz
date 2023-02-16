@@ -30,7 +30,7 @@ def weatherJsonToString(jsonValues):
     strPompousWordage = pompousWordage()
     strCruelSoup = cruelSoup()
     strFriendCircles = friendCircles()
-    strOilPrice = oilPrice("%E6%B9%96%E5%8C%97")
+    strOilPrice = oilPrice()
     # print(strLogInit)
     strLogAllDayDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
@@ -232,11 +232,11 @@ def friendCircles():
     return circlesResult
 
 # 今日油价 (接口https://apis.tianapi.com/oilprice/index?key=TIANAPI_KEY&prov=%E6%B9%96%E5%8C%97)
-# 传入的省份名称需要转为URL地址编码形式入参 例： 湖北 %E6%B9%96%E5%8C%97  浙江 %E6%B5%99%E6%B1%9F
-def oilPrice(provinceName):
+# 链接后面传入的省份名称需要转为URL地址编码形式入参 例： 湖北 %E6%B9%96%E5%8C%97  浙江 %E6%B5%99%E6%B1%9F
+def oilPrice():
     api_key = os.environ["TIANAPI_KEY"]  # tianapi key
     oilPriceResult = ""
-    url_link = "https://apis.tianapi.com/oilprice/index?key=" + api_key + "&prov=" + provinceName
+    url_link = "https://apis.tianapi.com/oilprice/index?key=" + api_key + "&prov=%E6%B9%96%E5%8C%97"
     try:
         resultJson = urllib.request.urlopen(url_link)
         jsonResult = json.load(resultJson)
