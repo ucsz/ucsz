@@ -10,6 +10,7 @@
 import SendMail
 import ProcessingDataUnit
 import os
+import time
 
 maillog = ProcessingDataUnit.splicingString()
 to_addr = os.environ["MASTER_MAIL_SMTP_TOADDRESS"]  # 接收邮箱
