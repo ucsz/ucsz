@@ -259,3 +259,60 @@ def oilPrice():
         print('Error code: ', e.code, ErrorInfo)
         sys.exit()
     return oilPriceResult
+
+# 今日黄历 (接口https://apis.tianapi.com/lunar/index?key=【APIKEY】&date=2088-02-02)
+def lunar():
+    dateStr = time.strftime("%Y-%m-%d")  # 当前年月日期
+    api_key = os.environ["TIANAPI_KEY"]  # tianapi key
+    lunarResult = ""
+    url_link = "https://apis.tianapi.com/lunar/index?key=" + api_key + "&date=" + dateStr
+    try:
+        resultJson = urllib.request.urlopen(url_link)
+        jsonResult = json.load(resultJson)
+        strCode = int(jsonResult['code']) if 'code' in jsonResult else 400  # 接口返回状态
+        # print("strErrorCode:" + str(strErrorCode))
+        if strCode == 200:
+            lunardateStr = str(jsonResult['result']['lunardate']) if 'result' in jsonResult else 'xxxx-xx-xx'  # 农历日期
+            lunar_festivalStr = str(jsonResult['result']['lunar_festival']) if 'result' in jsonResult else '春节'  # 农历节日
+            festivalStr = str(jsonResult['result']['festival']) if 'result' in jsonResult else '无'  # 公历节日
+            fitnessStr = str(jsonResult['result']['fitness']) if 'result' in jsonResult else ''  # 适宜
+            tabooStr = str(jsonResult['result']['taboo']) if 'result' in jsonResult else ''  # 不宜
+            shenweiStr = str(jsonResult['result']['shenwei']) if 'result' in jsonResult else ''  # 神位
+            taishenStr = str(jsonResult['result']['taishen']) if 'result' in jsonResult else ''  # 胎神
+            chongshaStr = str(jsonResult['result']['chongsha']) if 'result' in jsonResult else ''  # 冲煞
+            suishaStr = str(jsonResult['result']['suisha']) if 'result' in jsonResult else ''  # 岁煞
+            wuxingjiaziStr = str(jsonResult['result']['wuxingjiazi']) if 'result' in jsonResult else ''  # 五行甲子
+            wuxingnayearStr = str(jsonResult['result']['wuxingnayear']) if 'result' in jsonResult else ''  # 五行年
+            wuxingnamonthStr = str(jsonResult['result']['wuxingnamonth']) if 'result' in jsonResult else ''  # 五行月
+            xingsuStr = str(jsonResult['result']['xingsu']) if 'result' in jsonResult else ''  # 星宿
+            pengzuStr = str(jsonResult['result']['pengzu']) if 'result' in jsonResult else ''  # 彭祖
+            jianshenStr = str(jsonResult['result']['jianshen']) if 'result' in jsonResult else ''  # 见神
+            tiangandizhiyearStr = str(jsonResult['result']['tiangandizhiyear']) if 'result' in jsonResult else ''  # 天干地支年
+            tiangandizhimonthStr = str(jsonResult['result']['tiangandizhimonth']) if 'result' in jsonResult else ''  # 天干地支月
+            tiangandizhidayStr = str(jsonResult['result']['tiangandizhiday']) if 'result' in jsonResult else ''  # 天干地支日
+            lmonthnameStr = str(jsonResult['result']['lmonthname']) if 'result' in jsonResult else ''  # 季节
+            shengxiaoStr = str(jsonResult['result']['shengxiao']) if 'result' in jsonResult else ''  # 生肖
+            lubarmonthStr = str(jsonResult['result']['lubarmonth']) if 'result' in jsonResult else ''  # 农历月
+            lunardayStr = str(jsonResult['result']['lunarday']) if 'result' in jsonResult else ''  # 农历日
+            jieqiStr = str(jsonResult['result']['jieqi']) if 'result' in jsonResult else ''  # 节气
+            # Str = str(jsonResult['result']['']) if 'result' in jsonResult else ''  #
+            strText = "农历      [" + lunardateStr + "]   " + jieqiStr \
+                      + "\n" + lunar_festivalStr + "      " + festivalStr \
+                      + "\n" + lubarmonthStr + "      " + lunardayStr + "      " + lmonthnameStr + "      " + shengxiaoStr \
+                      + "\n" + tiangandizhiyearStr + "      " + tiangandizhimonthStr + "      " + tiangandizhidayStr \
+                      + "\n" + wuxingjiaziStr + "      " + wuxingnayearStr + "      " + wuxingnamonthStr \
+                      + "\n" + "神位 " + shenweiStr \
+                      + "\n" + "胎神 " + taishenStr \
+                      + "\n" + "🔻煞    " + chongshaStr + "   " + suishaStr \
+                      +  "\n🈲不宜  " + tabooStr \
+                      + "\n🉑适宜  " + fitnessStr
+            lunarResult = str(strText)
+    except urllib.error.HTTPError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    except urllib.error.URLError as e:
+        ErrorInfo = e.read().decode()
+        print('Error code: ', e.code, ErrorInfo)
+        sys.exit()
+    return lunarResult
