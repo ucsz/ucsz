@@ -46,13 +46,13 @@ def weatherJsonToString():
             "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
         #  Parse the results as JSON
         jsonValues = json.load(ResultBytes)
-        strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
-        #  strAddress = str(jsonValues['address']) if 'address' in jsonValues else 0  # 位置
+        # strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
+        # strAddress = str(jsonValues['address']) if 'address' in jsonValues else 0  # 位置
         # strLongitude = str(jsonValues['longitude']) if 'longitude' in jsonValues else 0  # 经度
         # strLatitude = str(jsonValues['latitude']) if 'latitude' in jsonValues else 0  # 维度
-        #  strTimezone = str(jsonValues['timezone']) if 'timezone' in jsonValues else 0  # 时区
-        #  strTzoffset = str(jsonValues['tzoffset']) if 'tzoffset' in jsonValues else 0  # 时区对应夏令时补偿
-        #  str = str(jsonValues['']) if '' in jsonValues else 0  #
+        # strTimezone = str(jsonValues['timezone']) if 'timezone' in jsonValues else 0  # 时区
+        # strTzoffset = str(jsonValues['tzoffset']) if 'tzoffset' in jsonValues else 0  # 时区对应夏令时补偿
+        # str = str(jsonValues['']) if '' in jsonValues else 0  #
         # strInitHeader = strLongitude + ' ' + strLatitude + ' ' + strResolvedAddress
         # strLogInit = "=================================\n" + strInitHeader + "\n================================="
         # print(strLogInit)
