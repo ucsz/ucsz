@@ -38,11 +38,12 @@ def splicingString():
 
 # 获取的天气json串转换为string格式
 def weatherJsonToString():
-    key_value = os.environ["VISUALCROSSING_KEY"]  # visualcrossing key
-    ResultBytes = urllib.request.urlopen(
-        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
-    #  Parse the results as JSON
-    jsonValues = json.load(ResultBytes)
+    try:
+        key_value = os.environ["VISUALCROSSING_KEY"]  # visualcrossing key
+        ResultBytes = urllib.request.urlopen(
+            "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
+        #  Parse the results as JSON
+        jsonValues = json.load(ResultBytes)
     
     strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
     #  strAddress = str(jsonValues['address']) if 'address' in jsonValues else 0  # 位置
