@@ -33,7 +33,7 @@ def splicingString():
                        + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
                        + "\n" + strLunar \
                        + "\n=================================" \
-                       + "\n" + strWeatherJsonToString
+                       + strWeatherJsonToString
     return strLogAllDate
 
 # 获取的天气json串转换为string格式
@@ -96,14 +96,14 @@ def weatherJsonToString():
                 isRain = "有雨 -> " + str(strDayPreciptypeValue)
             else:
                 isRain = "无雨"
-            strLogDay = strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
+            strLogDay = "\n" + strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
                         + "\n日出" + strDaySunrise + "          " + strDaySunset + "日落" \
                         + "\n相对湿度" + "                     " + strDayHumidity + "%" \
                         + "\n" + isRain \
                         + "\n" + strDayConditions \
                         + "\n" + strDayDescription \
                         + "\n---------------------------------"
-            strLogAllDayDate = strLogDay
+            strLogAllDayDate = strLogAllDayDate + strLogDay
     except urllib.error.HTTPError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
