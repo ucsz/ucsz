@@ -95,7 +95,7 @@ def weatherJsonToString():
                 isRain = "有雨 -> " + str(strDayPreciptypeValue)
             else:
                 isRain = "无雨"
-            strLogDay = "\n" + strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
+            strLogDay = strDayTempmin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
                         + "\n日出" + strDaySunrise + "          " + strDaySunset + "日落" \
                         + "\n相对湿度" + "                     " + strDayHumidity + "%" \
                         + "\n" + isRain \
