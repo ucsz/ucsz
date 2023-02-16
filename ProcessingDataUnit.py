@@ -37,6 +37,7 @@ def splicingString():
     return strLogAllDate
 
 # 获取的天气json串转换为string格式
+# 天气接口地址 https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json
 def weatherJsonToString():
     strLogAllDayDate = ""
     key_value = os.environ["VISUALCROSSING_KEY"]  # visualcrossing key
