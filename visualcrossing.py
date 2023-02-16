@@ -6,11 +6,7 @@
 # @File     : visualcrossing.py
 # Copyright (W) 2022 U.C.S.Z. Corp.
 # License: ucsz.com
-import time
-import urllib.request
-import sys
-import os
-import json
+
 import SendMail
 import ProcessingDataUnit
 
