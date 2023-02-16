@@ -299,14 +299,14 @@ def lunar():
             jieqiStr = str(jsonResult['result']['jieqi']) if 'result' in jsonResult else ''  # 节气
             # Str = str(jsonResult['result']['']) if 'result' in jsonResult else ''  #
             strText = "农历      [" + lunardateStr + "]   " + jieqiStr \
-                      + "\n" + lunar_festivalStr + "      " + festivalStr \
+                      + "\n" + "🎁       " + lunar_festivalStr + "      " + festivalStr \
                       + "\n" + lubarmonthStr + "      " + lunardayStr + "      " + lmonthnameStr + "      " + shengxiaoStr \
                       + "\n" + tiangandizhiyearStr + "      " + tiangandizhimonthStr + "      " + tiangandizhidayStr \
                       + "\n" + wuxingjiaziStr + "      " + wuxingnayearStr + "      " + wuxingnamonthStr \
                       + "\n" + "神位 " + shenweiStr \
                       + "\n" + "胎神 " + taishenStr \
                       + "\n" + "🔻煞    " + chongshaStr + "   " + suishaStr \
-                      +  "\n🈲不宜  " + tabooStr \
+                      + "\n🈲不宜  " + tabooStr \
                       + "\n🉑适宜  " + fitnessStr
             lunarResult = str(strText)
     except urllib.error.HTTPError as e:
