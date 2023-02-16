@@ -15,6 +15,27 @@ import os
 
 # 处理数据格式
 
+# 将所有方法获取的字串进行拼接
+def splicingString():
+    strLoverPrattle = loverPrattle()
+    strPompousWordage = pompousWordage()
+    strCruelSoup = cruelSoup()
+    strFriendCircles = friendCircles()
+    strOilPrice = oilPrice()
+    strLunar = lunar()
+    strWeatherJsonToString = weatherJsonToString()
+    strLogAllDate = "⏰" + str(strLoverPrattle) \
+                       + "\n🍚" + strPompousWordage \
+                       + "\n🍵" + strFriendCircles \
+                       + "\n🍺" + strCruelSoup \
+                       + "\n⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽" \
+                       + "\n" + strOilPrice \
+                       + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
+                       + "\n" + strLunar \
+                       + "\n=================================" \
+                       + "\n" + strWeatherJsonToString
+    return strLogAllDate
+
 # 获取的天气json串转换为string格式
 def weatherJsonToString(jsonValues):
     strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
