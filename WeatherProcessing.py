@@ -46,12 +46,12 @@ def qweatherWeatherJsonToString():
                 strDayTextDay = str(i['textDay']) if 'textDay' in i else '唯一'  # 预报白天天气状况文字描述，包括阴晴雨雪等天气状态的描述
                 strDayTextNight = str(i['textNight']) if 'textNight' in i else '0.0'  # 预报晚间天气状况文字描述，包括阴晴雨雪等天气状态的描述
                 #  strDay = str(i['']) if '' in i else '0.0'  #
-                strLogDay = "\n" + strDayTempMin + "℃" + "  <   " + strDayDatetime + "   <  " + strDayTempMax + "℃" \
-                            + "\n日出" + strDaySunrise + "          " + strDaySunset + "日落" \
-                            + "\n紫外线" + " -->   " + strDayUvIndex \
-                            + "\n相对湿度" + "                     " + strDayHumidity + "%" \
+                strLogDay = "\n" + strDayTempMin + "℃" + "   <   " + strDayDatetime + "   <   " + strDayTempMax + "℃" \
+                            + "\n日出" + strDaySunrise + "                " + strDaySunset + "日落" \
+                            + "\n湿度" + "                          " + strDayHumidity + "%" \
                             + "\n白天 " + " -->   " + strDayTextDay \
                             + "\n夜间 " + " -->   " + strDayTextNight \
+                            + "\n紫外线" + " -->   " + strDayUvIndex \
                             + "\n---------------------------------"
                 strLogAllDayDate = strLogAllDayDate + strLogDay
     except urllib.error.HTTPError as e:
