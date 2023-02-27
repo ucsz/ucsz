@@ -44,6 +44,7 @@ jobs:
           MASTER_MAIL_SMTP_163QY_PASSWORD: ${{ secrets.MASTER_MAIL_SMTP_163QY_PASSWORD }}
           VISUALCROSSING_KEY: ${{ secrets.VISUALCROSSING_KEY }}
           TIANAPI_KEY: ${{ secrets.TIANAPI_KEY }}
+          QWEATHERAPI_KEY: ${{ secrets.QWEATHERAPI_KEY }}
           TZ: Asia/Shanghai
         run: |
           pwd
