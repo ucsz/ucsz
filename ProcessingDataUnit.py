@@ -12,6 +12,7 @@ import urllib.request
 import json
 import sys
 import os
+import WeatherProcessing
 
 # 处理数据格式
 
@@ -23,7 +24,8 @@ def splicingString():
     strFriendCircles = friendCircles()
     strOilPrice = oilPrice()
     strLunar = lunar()
-    strWeatherJsonToString = weatherJsonToString()
+    # strWeatherJsonToString = weatherJsonToString() # 天气数据来源Visual Crossing
+    strWeatherJsonToString = WeatherProcessing.qweatherWeatherJsonToString() # 天气数据来源qweather和风天气
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
