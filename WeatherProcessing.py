@@ -47,18 +47,26 @@ def splicingString():
 
 # 获取的7天内的天气json串转换为string格式
 # 和风天气接口地址 https://devapi.qweather.com/v7/weather/7d?location=101210101&key=key_value
+# 返回数据是JSON格式并进行了Gzip压缩，数据类型均为字符串
 def qweatherWeatherJsonToString():
     strLogAllDayDate = ""
     key_value = os.environ["QWEATHERAPI_KEY"]  # visualcrossing key
     try:
-        ResultBytes = urllib.request.urlopen(
+        resultBytes = urllib.request.urlopen(
             "https://devapi.qweather.com/v7/weather/7d?location=101210101&key=" + key_value)
-        #  Parse the results as JSON
-        jsonValues = json.load(ResultBytes)
-        # str = str(jsonValues['']) if '' in jsonValues else 0  #
-        strCode = int(jsonValues['code']) if 'code' in jsonValues else 400  # 接口返回状态
+        resultJson = '{}'  # 将返回对象转化为json串
+        # 通过header中的Content-Encoding标记判断是否会Gzip压缩
+        if resultBytes.info().get('Content-Encoding') == 'gzip':
+            resultObject = gzip.decompress(resultBytes.read())
+            # Parse the results as JSON
+            resultJson = json.loads(resultObject)
+        else:
+            # Parse the results as JSON
+            resultJson = json.load(resultBytes) 
+        # str = str(resultJson['']) if '' in resultJson else 0  #
+        strCode = int(resultJson['code']) if 'code' in resultJson else 400  # 接口返回状态
         if strCode == 200:
-            jsonDat = jsonValues['daily'] if 'daily' in jsonValues else '[{}]'
+            jsonDat = resultJson['daily'] if 'daily' in resultJson else '[{}]'
             for i in jsonDat:
                 strDayDatetime = str(i['fxDate']) if 'fxDate' in i else '1986-04-01'  # 预报日期
                 strDayTempMax = str(i['tempMax']) if 'tempMax' in i else '0.0'  # 预报当天最高温度
