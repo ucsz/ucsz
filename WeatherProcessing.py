@@ -101,7 +101,7 @@ def qweatherNewWeatherJsonToString():
         #  Parse the results as JSON
         jsonValues = json.load(ResultBytes)
         '''
-        ResultObject = requests.get(https://devapi.qweather.com/v7/weather/now?location=101210101&key=" + key_value)
+        ResultObject = requests.get("https://devapi.qweather.com/v7/weather/now?location=101210101&key=" + key_value)
         jsonValues = json.loads(ResultObject.text, strict=False)                  
         # str = str(jsonValues['']) if '' in jsonValues else 0  #
         strCode = int(jsonValues['code']) if 'code' in jsonValues else 400  # 接口返回状态
