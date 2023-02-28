@@ -7,11 +7,11 @@ import datetime
 # Copyright (W) 2023 U.C.S.Z. Corp.
 # License: ucsz.com
 
+import gzip
 import urllib.request
 import json
 import sys
 import os
-
 import requests
 
 
