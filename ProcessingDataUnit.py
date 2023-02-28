@@ -285,11 +285,13 @@ def oilPrice():
     except urllib.error.HTTPError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
-        sys.exit()
+        # sys.exit()
+        oilPriceResult = "油价接口HTTPError"
     except urllib.error.URLError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
-        sys.exit()
+        # sys.exit()
+        oilPriceResult = "油价接口URLError"
     return oilPriceResult
 
 # 今日黄历 (接口https://apis.tianapi.com/lunar/index?key=【APIKEY】&date=2088-02-02)
@@ -342,9 +344,11 @@ def lunar():
     except urllib.error.HTTPError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
-        sys.exit()
+        # sys.exit()
+        lunarResult = "黄历接口HTTPError"
     except urllib.error.URLError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
-        sys.exit()
+        # sys.exit()
+        lunarResult = "黄历接口URLError"
     return lunarResult
