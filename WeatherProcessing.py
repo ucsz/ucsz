@@ -46,6 +46,10 @@ def splicingString():
 
 
 # 获取的7天内的天气json串转换为string格式
+# 101210101 hz
+# 101200101 wh
+# 101201301 sz
+# 101210701 wz
 # 和风天气接口地址 https://devapi.qweather.com/v7/weather/7d?location=101210101&key=key_value
 # 返回数据是JSON格式并进行了Gzip压缩，数据类型均为字符串
 def qweatherWeatherJsonToString():
