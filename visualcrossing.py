@@ -21,3 +21,4 @@ mail_password = os.environ["MASTER_MAIL_SMTP_163QY_PASSWORD"]  # 发送邮件账
 strSub = '出行前置信息' + time.strftime("%Y%m%d%H%M%S%p")  # 邮件标题
 SendMail.sendMail(mail_account, mail_password, mail_arg, to_addr, strSub, str(maillog))
 ProcessingDataUnit.file_in("weather", maillog)
+print(maillog)
