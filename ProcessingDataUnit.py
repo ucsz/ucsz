@@ -24,8 +24,8 @@ def splicingString():
     strFriendCircles = friendCircles()
     strOilPrice = oilPrice()
     strLunar = lunar()
-    strWeatherJsonToString = weatherJsonToString() # 天气数据来源Visual Crossing
-    # strWeatherJsonToString = WeatherProcessing.qweatherWeatherJsonToString() # 天气数据来源qweather和风天气
+    # strWeatherJsonToString = weatherJsonToString() # 天气数据来源Visual Crossing
+    strWeatherJsonToString = WeatherProcessing.qweatherWeatherJsonToString() # 天气数据来源qweather和风天气
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
