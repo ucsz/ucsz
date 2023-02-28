@@ -51,11 +51,8 @@ jobs:
           cd ${{ secrets.REPOSITORY_NAME }}
           pwd
           ls -Ali ./weather.log
-          ls -Ali ./visualcrossing.py
           chmod 664 ./weather.log
-          chmod 754 ./visualcrossing.py
           ls -Ali ./weather.log
-          ls -Ali ./visualcrossing.py
           python visualcrossing.py
           ls -Ali ./weather.log
       - name: Execute Submit
