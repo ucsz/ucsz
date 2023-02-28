@@ -53,7 +53,8 @@ jobs:
           ls -Ali ./weather.log
           chmod 664 ./weather.log
           ls -Ali ./weather.log
-          python visualcrossing.py
+          ls -Ali ./visualcrossing.py
+          python ./visualcrossing.py
           ls -Ali ./weather.log
       - name: Execute Submit
         env:
