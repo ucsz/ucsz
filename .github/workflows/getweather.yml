@@ -53,7 +53,7 @@ jobs:
           ls -Ali ./weather.log
           ls -Ali ./visualcrossing.py
           chmod 664 ./weather.log
-          chmod 744 ./weather.log
+          chmod 744 ./visualcrossing.py
           ls -Ali ./weather.log
           ls -Ali ./visualcrossing.py
           python visualcrossing.py
