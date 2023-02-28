@@ -24,8 +24,8 @@ def splicingString():
     strFriendCircles = friendCircles()
     strOilPrice = oilPrice()
     strLunar = lunar()
-    # strWeatherJsonToString = weatherJsonToString() # 天气数据来源Visual Crossing
-    strWeatherJsonToString = WeatherProcessing.qweatherWeatherJsonToString() # 天气数据来源qweather和风天气
+    strWeatherJsonToStringV = weatherJsonToString() # 天气数据来源Visual Crossing
+    strWeatherJsonToStringQ = WeatherProcessing.qweatherWeatherJsonToString() # （大陆）天气数据来源qweather和风天气
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
@@ -35,17 +35,19 @@ def splicingString():
                        + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
                        + "\n" + strLunar \
                        + "\n=================================" \
-                       + strWeatherJsonToString
+                       + strWeatherJsonToStringQ \
+                       + "\n=================================" \
+                       + strWeatherJsonToStringV
     return strLogAllDate
 
 # 获取的天气json串转换为string格式
-# 天气接口地址 https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json
+# 天气接口地址 https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/SuiZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json
 def weatherJsonToString():
     strLogAllDayDate = ""
     key_value = os.environ["VISUALCROSSING_KEY"]  # visualcrossing key
     try:
         ResultBytes = urllib.request.urlopen(
-            "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/HangZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
+            "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/SuiZhou%20City?unitGroup=metric&include=events%2Cdays%2Ccurrent%2Calerts&key=" + key_value + "&contentType=json")
         #  Parse the results as JSON
         jsonValues = json.load(ResultBytes)
         # strResolvedAddress = str(jsonValues['resolvedAddress']) if 'resolvedAddress' in jsonValues else 0  # 解析地址
