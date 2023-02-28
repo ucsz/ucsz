@@ -38,7 +38,6 @@ def splicingString():
                        + strWeatherJsonToStringQ \
                        + "\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡" \
                        + strWeatherJsonToStringV
-    print("######################:" + strLogAllDate)
     return strLogAllDate
 
 # 获取的天气json串转换为string格式
