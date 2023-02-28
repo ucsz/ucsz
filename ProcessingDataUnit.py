@@ -35,8 +35,12 @@ def splicingString():
                        + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
                        + "\n" + strLunar \
                        + "\n=================================" \
+                       + "\n            SUIZHOU             =" \
+                       + "\n=================================" \
                        + strWeatherJsonToStringQ \
-                       + "\n≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡" \
+                       + "\n=================================" \
+                       + "\n=           HANGZHOU            =" \
+                       + "\n=================================" \
                        + strWeatherJsonToStringV
     return strLogAllDate
 
