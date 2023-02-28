@@ -58,7 +58,7 @@ def qweatherWeatherJsonToString():
     try:
         resultBytes = urllib.request.urlopen("https://devapi.qweather.com/v7/weather/7d?location=101201301&key=" + key_value)
         resultJson = '{}'  # 将返回对象转化为json串
-        # 通过header中的Content-Encoding标记判断是否会Gzip压缩
+        # 通过返回header中的Content-Encoding标记判断是否会Gzip压缩
         if resultBytes.info().get('Content-Encoding') == 'gzip':
             resultObject = gzip.decompress(resultBytes.read())
             # Parse the results as JSON
