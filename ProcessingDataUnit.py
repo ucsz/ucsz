@@ -24,8 +24,8 @@ def splicingString():
     strFriendCircles = friendCircles()
     strOilPrice = oilPrice()
     strLunar = lunar()
-    strWeatherJsonToStringV = weatherJsonToString() # 天气数据来源Visual Crossing
-    strWeatherJsonToStringQ = WeatherProcessing.qweatherWeatherJsonToString() # （大陆）天气数据来源qweather和风天气
+    strWeatherJsonToStringV = weatherJsonToString()  # 天气数据来源Visual Crossing
+    strWeatherJsonToStringQ = WeatherProcessing.qweatherWeatherJsonToString()  # （大陆）天气数据来源qweather和风天气
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
@@ -64,6 +64,7 @@ def weatherJsonToString():
         # strInitHeader = strLongitude + ' ' + strLatitude + ' ' + strResolvedAddress
         # strLogInit = "=================================\n" + strInitHeader + "\n================================="
         # print(strLogInit)
+        count = 0  # 循环次数，循环7次，这里为后续只取列表最近7天的数据
         jsonDat = jsonValues['days'] if 'days' in jsonValues else '[{}]'
         for i in jsonDat:
             strDayDatetime = str(i['datetime']) if 'datetime' in i else '2023-01-01'  # 当前日期
@@ -112,6 +113,9 @@ def weatherJsonToString():
                         + "\n" + strDayDescription \
                         + "\n---------------------------------"
             strLogAllDayDate = strLogAllDayDate + strLogDay
+            count = count + 1
+            if count >= 7:
+                break
     except urllib.error.HTTPError as e:
         ErrorInfo = e.read().decode()
         print('Error code: ', e.code, ErrorInfo)
