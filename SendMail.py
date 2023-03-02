@@ -24,7 +24,7 @@ from email.mime.text import MIMEText
 def sendMail(fromMail, mailPassword, mailSMTP, toMail, subject, matter):
     msg = MIMEText(matter, 'plain', 'utf-8')
     # msg['From'] = Header('公允居间服务账户', 'utf-8').encode()
-    msg['From'] = formataddr((Header('Brokerage service account', 'utf-8').encode(), fromMail))
+    msg['From'] = formataddr((Header('brokerage service', 'utf-8').encode(), fromMail))
     # msg['To']接收的是字符串而不是list,如果有多个邮件地址，此处用,分割即可
     # msg['To'] = Header('王工' 'utf-8').encode()
     msg['To'] = formataddr((Header('Transferee', 'utf-8').encode(), toMail))  # Remind the assignee
