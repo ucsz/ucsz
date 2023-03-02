@@ -18,6 +18,6 @@ mail_arg = os.environ["MASTER_MAIL_SMTP_163QY_SSL"]  # 发送协议地址
 # mail_port = os.environ["MASTER_MAIL_SMTP_SSL_PORT"]  # 发送协议端口
 mail_account = os.environ["MASTER_MAIL_SMTP_FROMADDRESS"]  # 发送邮件账号
 mail_password = os.environ["MASTER_MAIL_SMTP_163QY_PASSWORD"]  # 发送邮件账号密码
-strSub = '出行前置信息' + time.strftime("%Y%m%d%H%M%S%p")  # 邮件标题
+strSub = 'Data Fetch §' + time.strftime("%Y%m%d%H%M%S%p")  # 邮件标题
 SendMail.sendMail(mail_account, mail_password, mail_arg, to_addr, strSub, str(maillog))
 ProcessingDataUnit.file_in("weather", maillog)
