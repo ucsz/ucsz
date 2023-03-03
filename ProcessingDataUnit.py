@@ -288,7 +288,8 @@ def oilPrice():
             p95Str = str(jsonResult['result']['p95']) if 'result' in jsonResult else '0.00'
             p98Str = str(jsonResult['result']['p98']) if 'result' in jsonResult else '0.00'
             ptimeStr = str(jsonResult['result']['time']) if 'result' in jsonResult else '2023-02-15 08:00:00.280'
-            strText = provStr + "\n         92#      95#     98#" + "\n         ¥" + p92Str + "    ¥" + p95Str + "   ¥" + p98Str
+            # strText = provStr + "\n         92#      95#     98#" + "\n         ¥" + p92Str + "    ¥" + p95Str + "   ¥" + p98Str
+            strText = provStr + "\n 92#(¥" + p92Str + ") 95#(¥" + p95Str + ") 98#(¥" + p98Str + ")"
             oilPriceResult = str(strText)
     except urllib.error.HTTPError as e:
         ErrorInfo = e.read().decode()
