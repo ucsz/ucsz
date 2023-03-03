@@ -19,15 +19,15 @@ import ExchangeRate
 
 # 将所有方法获取的字串进行拼接
 def splicingString():
-    strLoverPrattle = loverPrattle()
-    strPompousWordage = pompousWordage()
-    strCruelSoup = cruelSoup()
-    strFriendCircles = friendCircles()
-    strOilPrice = oilPrice()
-    strLunar = lunar()
+    strLoverPrattle = loverPrattle()  # 土味情话
+    strPompousWordage = pompousWordage()  # 彩虹屁
+    strCruelSoup = cruelSoup()  # 毒鸡汤
+    strFriendCircles = friendCircles()  # 朋友圈文案
+    strOilPrice = oilPrice()  # 今日油价
+    strLunar = lunar()  # 今日黄历
     strWeatherJsonToStringV = weatherJsonToString()  # 天气数据来源Visual Crossing
     strWeatherJsonToStringQ = WeatherProcessing.qweatherWeatherJsonToString()  # （大陆）天气数据来源qweather和风天气
-    strExchangeRate = ExchangeRate.exchangeRate()
+    strExchangeRate = ExchangeRate.exchangeRate()  # 货币汇率
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
