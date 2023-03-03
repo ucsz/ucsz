@@ -45,6 +45,7 @@ jobs:
           VISUALCROSSING_KEY: ${{ secrets.VISUALCROSSING_KEY }}
           TIANAPI_KEY: ${{ secrets.TIANAPI_KEY }}
           QWEATHERAPI_KEY: ${{ secrets.QWEATHERAPI_KEY }}
+          EXCHANGERATE_KYE: ${{ secrets.EXCHANGERATE_KYE }}
           TZ: Asia/Shanghai
         run: |
           pwd
