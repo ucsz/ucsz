@@ -37,7 +37,7 @@ def splicingString():
                        + "\n⛽" \
                        + strOilPrice \
                        + "\n☯" \
-                       + "\n" + strLunar \
+                       + strLunar \
                        + "\n=================================" \
                        + "\n=           SUIZHOU             =" \
                        + "\n=================================" \
