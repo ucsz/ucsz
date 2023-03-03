@@ -13,6 +13,7 @@ import json
 import sys
 import os
 import WeatherProcessing
+import ExchangeRate
 
 # 处理数据格式
 
@@ -26,10 +27,13 @@ def splicingString():
     strLunar = lunar()
     strWeatherJsonToStringV = weatherJsonToString()  # 天气数据来源Visual Crossing
     strWeatherJsonToStringQ = WeatherProcessing.qweatherWeatherJsonToString()  # （大陆）天气数据来源qweather和风天气
+    strExchangeRate = ExchangeRate.exchangeRate()
     strLogAllDate = "⏰" + str(strLoverPrattle) \
                        + "\n🍚" + strPompousWordage \
                        + "\n🍵" + strFriendCircles \
                        + "\n🍺" + strCruelSoup \
+                       + "\n☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼☼" \
+                       + "\n" + strExchangeRate \
                        + "\n⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽⛽" \
                        + "\n" + strOilPrice \
                        + "\n☯☯☯☯☯☯☯☯☯☯☯☯☯☯☯" \
