@@ -15,7 +15,7 @@ import os
 import requests
 
 
-# 处理数据格式
+# 查询和风天气数据源返回的天气数据
 
 
 # 设置请求头
