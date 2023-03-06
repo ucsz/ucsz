@@ -29,7 +29,7 @@ def exchangeRate():
         #  Parse the results as JSON
         jsonData = response.json()
         strCode = jsonData['result'] if 'result' in jsonData else 'error'  # 接口返回状态
-        print("jsonData:" + str(jsonData) + "\n--\n--\n" + strCode + "\n")
+        #  print("jsonData:" + str(jsonData))
         if strCode == 'success':
             reteJson = jsonData['conversion_rates'] if 'conversion_rates' in jsonData else '{"CNY": 0.0}'
             rateCNY = reteJson['CNY'] if 'CNY' in reteJson else 0.0  # 换算CNY汇率
