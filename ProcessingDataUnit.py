@@ -276,7 +276,7 @@ def friendCircles():
 def oilPrice():
     api_key = os.environ["TIANAPI_KEY"]  # tianapi key
     oilPriceResult = ""
-    url_link = "https://apis.tianapi.com/oilprice/index?key=" + api_key + "&prov=%E6%B9%96%E5%8C%97"
+    url_link = "https://apis.tianapi.com/oilprice/index?key=" + api_key + "&prov=%E6%B5%99%E6%B1%9F"
     try:
         resultJson = urllib.request.urlopen(url_link)
         jsonResult = json.load(resultJson)
